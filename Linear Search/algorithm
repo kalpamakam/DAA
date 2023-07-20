@@ -1,0 +1,4 @@
+LinearSearch(array, key)
+  for each item in the array
+    if item == value
+      return its index
