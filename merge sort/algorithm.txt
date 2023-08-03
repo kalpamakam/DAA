@@ -1,0 +1,15 @@
+Step 1: Start
+
+Step 2: Declare an array and left, right, mid variable 
+
+Step 3: Perform merge function.
+        mergesort(array,left,right)
+        mergesort (array, left, right)
+        if left > right
+        return
+        mid= (left+right)/2
+        mergesort(array, left, mid)
+        mergesort(array, mid+1, right)
+        merge(array, left, mid, right)
+
+Step 4: Stop
