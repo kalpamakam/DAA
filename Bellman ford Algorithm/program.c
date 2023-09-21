@@ -19,15 +19,12 @@ void bellmanFord(struct Graph* graph, int source) {
     int numEdges = graph->numEdges;
     int distance[MAX_VERTICES];
 
-    // Initialize distances from the source to all vertices as infinity
     for (int i = 0; i < numVertices; i++) {
         distance[i] = INT_MAX;
     }
 
-    // Set the distance to the source vertex to 0
     distance[source] = 0;
 
-    // Relax all edges repeatedly to find the shortest path
     for (int i = 0; i < numVertices - 1; i++) {
         for (int j = 0; j < numEdges; j++) {
             int u = graph->edges[j].source;
@@ -40,7 +37,6 @@ void bellmanFord(struct Graph* graph, int source) {
         }
     }
 
-    // Check for negative weight cycles
     for (int i = 0; i < numEdges; i++) {
         int u = graph->edges[i].source;
         int v = graph->edges[i].destination;
@@ -52,7 +48,6 @@ void bellmanFord(struct Graph* graph, int source) {
         }
     }
 
-    // Print the shortest distances
     printf("Vertex\tDistance from Source\n");
     for (int i = 0; i < numVertices; i++) {
         printf("%d\t%d\n", i, distance[i]);
