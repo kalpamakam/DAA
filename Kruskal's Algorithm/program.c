@@ -4,32 +4,26 @@
 #define MAX_VERTICES 100
 #define MAX_EDGES 100
 
-// Structure to represent an edge in the graph
 struct Edge {
     int source, destination, weight;
 };
-
-// Structure to represent a graph
 struct Graph {
     int numVertices, numEdges;
     struct Edge edges[MAX_EDGES];
 };
 
-// Function to compare edges by weight (used for sorting)
 int compareEdges(const void* a, const void* b) {
     return ((struct Edge*)a)->weight - ((struct Edge*)b)->weight;
 }
 
 int parent[MAX_VERTICES];
 
-// Function to find the parent of a vertex (uses path compression)
 int find(int vertex) {
     if (parent[vertex] == -1)
         return vertex;
     return find(parent[vertex]);
 }
 
-// Function to perform union of two subsets (uses rank to determine which tree to attach)
 void unionSets(int x, int y) {
     int rootX = find(x);
     int rootY = find(y);
