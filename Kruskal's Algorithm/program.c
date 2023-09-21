@@ -35,15 +35,12 @@ void kruskalMST(struct Graph* graph) {
     struct Edge resultMST[MAX_VERTICES];
     int numEdgesInMST = 0;
 
-    // Sort the edges in non-decreasing order of their weights
     qsort(graph->edges, graph->numEdges, sizeof(struct Edge), compareEdges);
 
-    // Initialize parent array for disjoint-set union-find
     for (int i = 0; i < numVertices; i++) {
         parent[i] = -1;
     }
 
-    // Iterate through all sorted edges and add them to the MST if they don't create a cycle
     for (int i = 0; i < graph->numEdges; i++) {
         struct Edge currentEdge = graph->edges[i];
 
@@ -56,7 +53,6 @@ void kruskalMST(struct Graph* graph) {
         }
     }
 
-    // Print the MST
     printf("Edges in Minimum Spanning Tree (MST):\n");
     for (int i = 0; i < numEdgesInMST; i++) {
         printf("%d - %d : %d\n", resultMST[i].source, resultMST[i].destination, resultMST[i].weight);
