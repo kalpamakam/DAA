@@ -1,0 +1,12 @@
+Algorithm TSP
+Travelling salesman problem takes a graph G {V, E} as an input and declare another graph as the output which will record the path the salesman is going to take from one node to another.
+
+The algorithm begins by sorting all the edges in the input graph G from the least distance to the largest distance.
+
+The first edge selected is the edge with least distance, and one of the two vertices (say A and B) being the origin node (say A).
+
+Then among the adjacent edges of the node other than the origin node (B), find the least cost edge and add it onto the output graph.
+
+Continue the process with further nodes making sure there are no cycles in the output graph and the path reaches back to the origin node A.
+
+However, if the origin is mentioned in the given problem, then the solution must always start from that node only. Let us look at some example problems to understand this better.
