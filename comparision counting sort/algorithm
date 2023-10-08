@@ -1,0 +1,15 @@
+ALGORITHM ComparisonCounting(A[0…n-1])
+//Sorts an array by comparison counting
+//Input: Array A[0…n-1]
+//Output: Array S[0…n-1] of A’s elements in a sorted order
+for i ← 0 to n-1 do
+Count[i] ← 0
+for i ← 0 to n-2 do
+for j ← i+1 to n-1 do
+if A[i] < A[j]
+Count[j] ← Count[j] +1
+else
+Count[i] ← Count[i] +1
+for i ← 0 to n-1 do
+S[Count[i]] ← A[i]
+return S
