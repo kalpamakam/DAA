@@ -1,0 +1,14 @@
+ALORITHM:
+N-QUEEN(row, n, N, board)
+  if n==0
+    return TRUE
+
+  for j in 1 to N
+    if !IS-ATTACK(row, j, board, N)
+      board[row][j] = 1
+
+      if N-QUEEN(row+1, n-1, N, board)
+        return TRUE
+
+      board[row][j] = 0 //backtracking, changing current decision
+  return FALSE

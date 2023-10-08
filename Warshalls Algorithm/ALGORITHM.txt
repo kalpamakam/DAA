@@ -1,0 +1,9 @@
+ALGORITHM:
+
+Warshall(A[1...n, 1...n]) // A is the adjacency matrix
+R(0) ← A
+for k ← 1 to n do
+for i ← 1 to n do
+for j ← to n do
+R(k)[i, j] ← R(k-1)[i, j] or (R(k-1)[i, k] and R(k-1)[k, j])
+return R(n)
